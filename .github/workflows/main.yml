@@ -19,6 +19,6 @@ jobs:
     - name: esp-idf build
       uses: espressif/esp-idf-ci-action@v1
       with:
-        esp_idf_version: v6.1.0
+        esp_idf_version: release-v6.1
         target: esp32c5
         path: .
