@@ -20,7 +20,10 @@
 #include "esp_netif_sntp.h"
 #include "esp_vfs_fat.h"
 #include "freertos/FreeRTOS.h"
-#include "mbedtls/sha256.h"
+// mbedtls 4 moved the low-level SHA-256 API behind a private header. The
+// public replacement is the PSA hash API; until this is ported, rely on
+// MBEDTLS_ALLOW_PRIVATE_ACCESS, which esp_config.h defines.
+#include "mbedtls/private/sha256.h"
 #include "miniz.h"
 #include "sd_card.h"
 
